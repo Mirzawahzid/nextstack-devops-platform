@@ -1,0 +1,86 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nextstack-deployment
+  namespace: nextstack
+  labels:
+    app: nextstack
+spec:
+  # ── Scaling: 2 replicas ──────────────────────────────────────────────────────
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nextstack
+  template:
+    metadata:
+      labels:
+        app: nextstack
+    spec:
+      containers:
+        - name: nextstack
+          image: mirzawahzid/nextstack:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+
+          # ── Environment from ConfigMap ────────────────────────────────────────
+          envFrom:
+            - configMapRef:
+                name: nextstack-config
+
+          # ── Environment from Secrets ──────────────────────────────────────────
+          env:
+            - name: SESSION_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: nextstack-app-secret
+                  key: SESSION_SECRET
+            - name: API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: nextstack-app-secret
+                  key: API_KEY
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: nextstack-db-secret
+                  key: DB_USER
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: nextstack-db-secret
+                  key: DB_PASSWORD
+            - name: DB_URI
+              valueFrom:
+                secretKeyRef:
+                  name: nextstack-db-secret
+                  key: DB_URI
+
+          # ── Liveness Probe: restarts pod if app is frozen/crashed ─────────────
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 3000
+            initialDelaySeconds: 15
+            periodSeconds: 20
+            failureThreshold: 3
+            timeoutSeconds: 5
+
+          # ── Readiness Probe: removes pod from traffic if not ready ────────────
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 3000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+            failureThreshold: 3
+            timeoutSeconds: 3
+
+          # ── Resource Limits ───────────────────────────────────────────────────
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "256Mi"
+              cpu: "250m"
