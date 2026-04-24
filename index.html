@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NextStack – Code. Build. Dominate.</title>
+  <meta name="description" content="NextStack is a tech education platform offering courses, mock interviews, and AI-powered assessments to launch your tech career." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <div class="nav-logo">
+          <span class="logo-icon">&#9650;</span>
+        </div>
+        <div class="nav-brand-text">
+          <span class="brand-name">NextStack</span>
+          <span class="brand-tagline">Next Stack: Build. Conquer. Dominate the Digital!</span>
+        </div>
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#courses" class="nav-link">Courses</a></li>
+        <li><a href="#mock-interview" class="nav-link">Mock Interview</a></li>
+        <li><a href="#evaluator" class="nav-link">The Evaluator</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-login" onclick="openLoginModal()">
+          <span class="login-icon">&#128100;</span> Login
+        </button>
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── HERO SECTION ── -->
+  <section class="hero" id="home">
+    <div class="hero-bg-glow"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge-dot"></span> Trusted by 10,000+ Students Worldwide
+        </div>
+        <h1 class="hero-title">
+          Build Your Tech Career<br/>
+          with <span class="text-red">NextStack</span>
+        </h1>
+        <p class="hero-subtitle">
+          Master in-demand tech skills through expert-led courses, realistic mock interviews, 
+          and AI-powered assessments. Your journey to a six-figure tech career starts here.
+        </p>
+        <div class="hero-cta">
+          <a href="#courses" class="btn-primary">Explore Courses</a>
+          <a href="#mock-interview" class="btn-outline">Try Mock Interview</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <span class="stat-number">50+</span>
+            <span class="stat-label">Courses</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">10K+</span>
+            <span class="stat-label">Students</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat">
+            <span class="stat-number">95%</span>
+            <span class="stat-label">Job Placement</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="code-card">
+          <div class="code-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="code-filename">nextstack.js</span>
+          </div>
+          <div class="code-body">
+            <pre><code><span class="c-keyword">const</span> <span class="c-var">career</span> = <span class="c-keyword">new</span> <span class="c-class">NextStack</span>();
+
+career.<span class="c-fn">enroll</span>(<span class="c-string">'Full Stack Dev'</span>);
+career.<span class="c-fn">practice</span>(<span class="c-string">'Mock Interviews'</span>);
+career.<span class="c-fn">assess</span>(<span class="c-string">'The Evaluator'</span>);
+
+<span class="c-keyword">return</span> career.<span class="c-fn">launch</span>();
+<span class="c-comment">// → Dream job unlocked 🚀</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST BAR ── -->
+  <section class="trust-bar">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item">
+          <span class="trust-icon">&#9989;</span>
+          <div>
+            <strong>Industry-Certified</strong>
+            <p>Recognized certifications</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">&#9989;</span>
+          <div>
+            <strong>Expert Instructors</strong>
+            <p>Taught by senior engineers</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">&#9989;</span>
+          <div>
+            <strong>AI-Powered</strong>
+            <p>Smart assessments & grading</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon">&#9989;</span>
+          <div>
+            <strong>Job-Ready</strong>
+            <p>Real-world projects included</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COURSES SECTION ── -->
+  <section class="courses" id="courses">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">&#128218; Our Curriculum</span>
+        <h2 class="section-title">Master <span class="text-red">In-Demand</span> Tech Skills</h2>
+        <p class="section-subtitle">Hands-on courses built for real-world jobs. Learn at your own pace with lifetime access.</p>
+      </div>
+
+      <div class="courses-grid">
+        <div class="course-card featured">
+          <div class="course-badge-tag">Most Popular</div>
+          <div class="course-icon">&#128187;</div>
+          <h3>Full Stack Development</h3>
+          <p>HTML, CSS, JavaScript, React, Node.js, MongoDB. Build complete web applications from scratch.</p>
+          <div class="course-meta">
+            <span>&#9200; 120 Hours</span>
+            <span>&#11088; 4.9</span>
+          </div>
+          <div class="course-price">$199 <span class="price-old">$399</span></div>
+          <button class="btn-course">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">&#9729;</div>
+          <h3>Cloud & DevOps</h3>
+          <p>AWS, Azure, Docker, Kubernetes, CI/CD pipelines. Deploy and scale like a pro.</p>
+          <div class="course-meta">
+            <span>&#9200; 80 Hours</span>
+            <span>&#11088; 4.8</span>
+          </div>
+          <div class="course-price">$179 <span class="price-old">$349</span></div>
+          <button class="btn-course">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">&#129302;</div>
+          <h3>AI & Machine Learning</h3>
+          <p>Python, TensorFlow, PyTorch, NLP, Computer Vision. Build intelligent applications.</p>
+          <div class="course-meta">
+            <span>&#9200; 100 Hours</span>
+            <span>&#11088; 4.7</span>
+          </div>
+          <div class="course-price">$219 <span class="price-old">$449</span></div>
+          <button class="btn-course">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">&#128202;</div>
+          <h3>Data Science</h3>
+          <p>Python, Pandas, SQL, Power BI, Tableau. Turn raw data into actionable insights.</p>
+          <div class="course-meta">
+            <span>&#9200; 90 Hours</span>
+            <span>&#11088; 4.8</span>
+          </div>
+          <div class="course-price">$189 <span class="price-old">$379</span></div>
+          <button class="btn-course">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">&#128737;</div>
+          <h3>Cybersecurity</h3>
+          <p>Ethical hacking, penetration testing, network security, and security auditing fundamentals.</p>
+          <div class="course-meta">
+            <span>&#9200; 85 Hours</span>
+            <span>&#11088; 4.9</span>
+          </div>
+          <div class="course-price">$199 <span class="price-old">$399</span></div>
+          <button class="btn-course">Enroll Now</button>
+        </div>
+
+        <div class="course-card">
+          <div class="course-icon">&#128241;</div>
+          <h3>Mobile Development</h3>
+          <p>React Native, Flutter, iOS & Android development. Ship cross-platform mobile apps.</p>
+          <div class="course-meta">
+            <span>&#9200; 75 Hours</span>
+            <span>&#11088; 4.7</span>
+          </div>
+          <div class="course-price">$169 <span class="price-old">$329</span></div>
+          <button class="btn-course">Enroll Now</button>
+        </div>
+      </div>
+
+      <div class="courses-cta">
+        <a href="#" class="btn-outline">View All Courses &#8594;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MOCK INTERVIEW SECTION ── -->
+  <section class="mock-interview" id="mock-interview">
+    <div class="container">
+      <div class="mock-grid">
+        <div class="mock-content">
+          <span class="section-badge">&#127908; Interview Prep</span>
+          <h2 class="section-title">Ace Your Next <span class="text-red">Tech Interview</span></h2>
+          <p class="section-subtitle">
+            Practice with industry-level mock interviews conducted by senior engineers. 
+            Get real feedback, improve fast, and land the job you deserve.
+          </p>
+
+          <div class="mock-features">
+            <div class="mock-feature">
+              <div class="feature-icon-sm">
+                <span>&#9201;</span>
+              </div>
+              <div>
+                <strong>Reliability</strong>
+                <p>Consistent, structured responses</p>
+              </div>
+            </div>
+            <div class="mock-feature">
+              <div class="feature-icon-sm">
+                <span>&#128736;</span>
+              </div>
+              <div>
+                <strong>Technicality</strong>
+                <p>Deep technical skill evaluation</p>
+              </div>
+            </div>
+            <div class="mock-feature">
+              <div class="feature-icon-sm">
+                <span>&#128202;</span>
+              </div>
+              <div>
+                <strong>Detailed Feedback</strong>
+                <p>Written report after each session</p>
+              </div>
+            </div>
+            <div class="mock-feature">
+              <div class="feature-icon-sm">
+                <span>&#127775;</span>
+              </div>
+              <div>
+                <strong>Scored Sessions</strong>
+                <p>KPI-based performance tracking</p>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn-primary btn-large">
+            &#127908; Try Mock Interview – From $15
+          </button>
+        </div>
+
+        <div class="mock-pricing">
+          <div class="pricing-card">
+            <h3>Interview Packages</h3>
+            <div class="price-row">
+              <span class="price-type">Single Interview</span>
+              <span class="price-amount">$15</span>
+            </div>
+            <div class="price-divider"></div>
+            <div class="price-row">
+              <span class="price-type">Bundle (5 Interviews)</span>
+              <span class="price-amount red">$50</span>
+            </div>
+            <div class="price-divider"></div>
+            <div class="price-row">
+              <span class="price-type">Monthly Unlimited</span>
+              <span class="price-amount">$89</span>
+            </div>
+            <ul class="price-includes">
+              <li>&#10003; Live video session with engineer</li>
+              <li>&#10003; Detailed written feedback</li>
+              <li>&#10003; KPI performance report</li>
+              <li>&#10003; Re-attempt discounts</li>
+            </ul>
+            <button class="btn-primary" style="width:100%">Book Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE EVALUATOR SECTION ── -->
+  <section class="evaluator" id="evaluator">
+    <div class="container">
+      <div class="evaluator-grid">
+        <div class="evaluator-content">
+          <span class="section-badge">&#129302; AI-Powered Assessment</span>
+          <h2 class="section-title">Test Knowledge with <span class="text-red">The Evaluator</span></h2>
+          <p class="section-subtitle">
+            NextStack's AI-powered written assessment platform. Deliver randomized test sets, 
+            enforce lockdown mode, and let AI grade with strict, unbiased precision — complete 
+            with detailed KPI reports.
+          </p>
+
+          <div class="evaluator-features-grid">
+            <div class="eval-feature-card">
+              <div class="eval-icon">&#127922;</div>
+              <strong>Randomized Sets</strong>
+              <p>Unique test sets per student</p>
+            </div>
+            <div class="eval-feature-card">
+              <div class="eval-icon">&#128737;</div>
+              <strong>Exam Guard</strong>
+              <p>Lockdown & tab monitoring</p>
+            </div>
+            <div class="eval-feature-card">
+              <div class="eval-icon">&#129302;</div>
+              <strong>AI Grading</strong>
+              <p>Strict, unbiased marking</p>
+            </div>
+            <div class="eval-feature-card">
+              <div class="eval-icon">&#128202;</div>
+              <strong>KPI Reports</strong>
+              <p>Reliability, Thoughtfulness, Resilience</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="evaluator-card">
+          <div class="eval-card-header">
+            <div class="eval-card-icon">&#128203;</div>
+            <div>
+              <h3>The Evaluator</h3>
+              <p>AI-Powered Written Assessments</p>
+            </div>
+          </div>
+          <ul class="eval-list">
+            <li><span class="check-icon">&#10003;</span> Randomized question sets per student</li>
+            <li><span class="check-icon">&#10003;</span> Lockdown mode with tab monitoring</li>
+            <li><span class="check-icon">&#10003;</span> AI-powered strict grading</li>
+            <li><span class="check-icon">&#10003;</span> Detailed KPI performance reports</li>
+            <li><span class="check-icon">&#10003;</span> Anti-cheating measures</li>
+            <li><span class="check-icon">&#10003;</span> Instant results & certificates</li>
+          </ul>
+          <p class="eval-footer-text">
+            Assess students with confidence — fair, consistent, and fully automated.
+          </p>
+          <button class="btn-primary" style="width:100%">Start Assessment</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT SECTION ── -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">&#128161; Who We Are</span>
+        <h2 class="section-title">Why Choose <span class="text-red">NextStack?</span></h2>
+        <p class="section-subtitle">We're not just another e-learning platform. We're your career transformation partner.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">&#127891;</div>
+          <h3>Expert-Led Learning</h3>
+          <p>Every course is built and taught by senior engineers actively working in the industry.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">&#128640;</div>
+          <h3>Career-Focused</h3>
+          <p>We don't just teach theory. Every lesson is mapped to real job requirements and skills employers want.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">&#129309;</div>
+          <h3>Community Support</h3>
+          <p>Join a thriving community of 10,000+ learners, mentors, and hiring partners who have your back.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-icon">&#127942;</div>
+          <h3>Certified Outcomes</h3>
+          <p>Earn industry-recognized certificates that validate your skills to employers worldwide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT SECTION ── -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">&#128231; Get In Touch</span>
+        <h2 class="section-title">Have <span class="text-red">Questions?</span></h2>
+        <p class="section-subtitle">We're here to help you take the next step in your tech career.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="contact-icon">&#128231;</span>
+            <div>
+              <strong>Email Us</strong>
+              <p>hello@nextstacktech.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">&#128205;</span>
+            <div>
+              <strong>Location</strong>
+              <p>Available Worldwide – 100% Online</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">&#128222;</span>
+            <div>
+              <strong>Support Hours</strong>
+              <p>Mon – Fri, 9am – 6pm EST</p>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="#" class="social-btn">LinkedIn</a>
+            <a href="#" class="social-btn">Twitter</a>
+            <a href="#" class="social-btn">GitHub</a>
+          </div>
+        </div>
+        <form class="contact-form" onsubmit="handleContact(event)">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <select>
+              <option>Course Inquiry</option>
+              <option>Mock Interview Booking</option>
+              <option>Technical Support</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell us how we can help..." rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%">Send Message &#8594;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-brand">
+            <div class="nav-logo">
+              <span class="logo-icon">&#9650;</span>
+            </div>
+            <div class="nav-brand-text">
+              <span class="brand-name">NextStack</span>
+            </div>
+          </div>
+          <p>Empowering the next generation of tech professionals through world-class education, 
+          real-world practice, and AI-powered assessments.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Courses</h4>
+          <ul>
+            <li><a href="#">Full Stack Development</a></li>
+            <li><a href="#">Cloud & DevOps</a></li>
+            <li><a href="#">AI & Machine Learning</a></li>
+            <li><a href="#">Data Science</a></li>
+            <li><a href="#">Cybersecurity</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="#">Mock Interviews</a></li>
+            <li><a href="#">The Evaluator</a></li>
+            <li><a href="#">Certifications</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 NextStack. All rights reserved.</p>
+        <p>Built for future tech leaders.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── LOGIN MODAL ── -->
+  <div class="modal-overlay" id="loginModal" onclick="closeLoginModal(event)">
+    <div class="modal">
+      <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+      <div class="modal-logo">
+        <span class="logo-icon">&#9650;</span>
+        <span class="brand-name">NextStack</span>
+      </div>
+      <h2>Welcome Back</h2>
+      <p class="modal-sub">Sign in to access your dashboard</p>
+      <form onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="loginEmail" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="loginPassword" placeholder="••••••••" required />
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%">Sign In</button>
+      </form>
+      <p class="modal-footer-text">Don't have an account? <a href="#" class="text-red">Sign up free</a></p>
+    </div>
+  </div>
+
+  <!-- ── SCROLL TO TOP ── -->
+  <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">&#8679;</button>
+
+  <!-- ── CHATBOT ── -->
+  <div class="chatbot-launcher" id="chatLauncher" onclick="toggleChat()">
+    <span class="chat-launcher-icon" id="chatLauncherIcon">&#128172;</span>
+    <span class="chat-unread" id="chatUnread">1</span>
+  </div>
+
+  <div class="chatbot-window" id="chatWindow">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">&#9650;</div>
+        <div>
+          <strong>NextStack AI</strong>
+          <span class="chat-status"><span class="chat-online-dot"></span>Online</span>
+        </div>
+      </div>
+      <button class="chat-close" onclick="toggleChat()">&times;</button>
+    </div>
+
+    <div class="chat-messages" id="chatMessages">
+      <div class="chat-msg bot">
+        <div class="chat-bubble">
+          👋 Hi! I'm the NextStack AI assistant. How can I help you today?
+        </div>
+        <span class="chat-time">Just now</span>
+      </div>
+      <div class="chat-suggestions">
+        <button class="chat-suggest" onclick="sendSuggestion(this)">📚 View Courses</button>
+        <button class="chat-suggest" onclick="sendSuggestion(this)">🎤 Mock Interview</button>
+        <button class="chat-suggest" onclick="sendSuggestion(this)">💰 Pricing</button>
+        <button class="chat-suggest" onclick="sendSuggestion(this)">📞 Contact Us</button>
+      </div>
+    </div>
+
+    <div class="chat-input-row">
+      <input type="text" id="chatInput" placeholder="Type a message..." onkeydown="chatKeyDown(event)" />
+      <button class="chat-send" onclick="sendChatMessage()">&#10148;</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
