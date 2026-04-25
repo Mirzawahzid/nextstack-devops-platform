@@ -1,5 +1,21 @@
 # NextStack – Tech Education Platform
 
+<p align="left">
+  <img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white"/>
+</p>
+
+<p align="left">
+  <img src="https://img.shields.io/badge/replicas-2-blue?style=flat-square"/>
+  <img src="https://img.shields.io/badge/health%20probes-liveness%20%2B%20readiness-brightgreen?style=flat-square"/>
+  <img src="https://img.shields.io/badge/grafana%20tiles-7-orange?style=flat-square"/>
+  <img src="https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square"/>
+</p>
+
 > **Build. Conquer. Dominate the Digital!**
 
 NextStack is a full-featured tech education platform offering courses, mock interviews, and AI-powered assessments. This repo contains the application source code, Kubernetes manifests, Grafana monitoring dashboard, and full documentation.
